@@ -1,6 +1,5 @@
 # AS <NAME> to name this stage as maven
 FROM maven as maven_stage
-LABEL MAINTAINER="sgwebfreelancer@gmail.com"
 
 WORKDIR /usr/src/app
 COPY . /usr/src/app
