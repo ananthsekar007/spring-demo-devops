@@ -34,12 +34,23 @@ pipeline {
       }
     }
     
-    stage('Run image in the machine') {
+    stage('Run image in the machine - Dev Deploy') {
         steps {
             script {
                 dockerImage.pull()
                 sh 'docker stop $(docker ps -a -q)'
                 sh 'docker run -d -p 4000:4000 $registry:build-$BUILD_NUMBER'
+            }
+        }
+    }
+
+    stage ('Run image in QA Environment - QA Deploy') {
+        agent {
+            label 'qa-node'
+        }
+        steps {
+            script {
+
             }
         }
     }
