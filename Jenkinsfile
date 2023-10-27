@@ -55,6 +55,7 @@ pipeline {
                      """)
                 }
             }
+    }
     
     stage('Run image in the machine - Dev Deploy') {
         steps {
