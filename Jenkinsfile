@@ -8,7 +8,7 @@ pipeline {
     stage("Cloning Spring App") {
         steps {
             script {
-                git url: 'https://github.com/ananthsekar007/spring-demo-devops.git', branch: 'main'
+                git url: 'https://github.com/ananthsekar007/spring-demo-devops.git', branch: 'release'
             }
         }
     }
