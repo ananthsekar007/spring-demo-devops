@@ -50,7 +50,7 @@ pipeline {
         }
         steps {
             script {
-                dockerImage.pull()
+                sh 'docker pull registry:build-$BUILD_NUMBER'
                 sh 'docker stop $(docker ps -a -q)'
                 sh 'docker run -d -p 4000:4000 $registry:build-$BUILD_NUMBER'
             }
